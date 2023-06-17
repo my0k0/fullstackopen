@@ -1,0 +1,25 @@
+{
+  "name": "middleware",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../part3ex.9-11 && npm run build && cp -r build ../part3-4",
+    "deploy:full": "npm run build:ui && git checkout part3-4 && git add . && git commit -m part3-excercise-phonebook && git push -u origin part3-4",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "json-server -p3001 -w db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "json-server": "^0.17.3"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.22"
+  }
+}
